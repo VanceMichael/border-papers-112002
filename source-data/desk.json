@@ -1,0 +1,61 @@
+[
+  {
+    "record": "desk-1",
+    "availableFrom": 1,
+    "kind": "request",
+    "payload": {
+      "loan": "R1",
+      "volume": "BN-7",
+      "edition": "E1",
+      "desk": "甲席",
+      "window": [
+        "11:00",
+        "11:50"
+      ]
+    }
+  },
+  {
+    "record": "desk-2",
+    "availableFrom": 2,
+    "kind": "received",
+    "payload": {
+      "loan": "R1",
+      "desk": "甲席",
+      "physical": "P61",
+      "faces": [
+        "I18",
+        "I19"
+      ],
+      "time": "11:06"
+    }
+  },
+  {
+    "record": "desk-3",
+    "availableFrom": 2,
+    "kind": "request",
+    "payload": {
+      "loan": "R2",
+      "volume": "BN-8",
+      "edition": "E1",
+      "desk": "乙席",
+      "window": [
+        "11:20",
+        "12:00"
+      ]
+    }
+  },
+  {
+    "record": "desk-4",
+    "availableFrom": 4,
+    "kind": "returned",
+    "payload": {
+      "loan": "R1",
+      "desk": "甲席",
+      "physical": "P61",
+      "time": "11:51",
+      "faces": [
+        "I18"
+      ]
+    }
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "record": "clerk-1",
+    "availableFrom": 1,
+    "kind": "volume",
+    "payload": {
+      "volume": "BN-7",
+      "edition": "E1",
+      "leaves": [
+        {
+          "tag": "L1",
+          "physical": "P61",
+          "facePolicy": "both"
+        },
+        {
+          "tag": "L2",
+          "physical": "P62",
+          "facePolicy": "blank"
+        }
+      ]
+    }
+  },
+  {
+    "record": "clerk-2",
+    "availableFrom": 1,
+    "kind": "volume",
+    "payload": {
+      "volume": "BN-8",
+      "edition": "E1",
+      "leaves": [
+        {
+          "tag": "L1",
+          "physical": "P61",
+          "facePolicy": "both"
+        },
+        {
+          "tag": "L3",
+          "physical": "P63",
+          "facePolicy": "both"
+        }
+      ]
+    }
+  },
+  {
+    "record": "clerk-3",
+    "availableFrom": 4,
+    "kind": "volume",
+    "payload": {
+      "volume": "BN-7",
+      "edition": "E2",
+      "leaves": [
+        {
+          "tag": "L1",
+          "physical": "P68",
+          "facePolicy": "blank"
+        },
+        {
+          "tag": "L2",
+          "physical": "P62",
+          "facePolicy": "both"
+        }
+      ]
+    }
+  }
+]

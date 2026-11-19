@@ -1,4 +1,4 @@
-# 转运货物的查验抽样与封签复核的演练来源
+# 转关纸档的双面扫描与分卷调取的演练来源
 
 这里提供独立来源的本地合成记录，与实际单位、个人和线上业务无关。
 
@@ -12,10 +12,10 @@
 
 | GET 路由 | 来源约定 |
 | --- | --- |
-| `/source/gates` | pallet 为现场托盘实物。intactChange 是仅换外签；exposed 明示失去受检密封。 |
-| `/source/laboratory` | sampleId 仅在发样点及样签标识后唯一。result 通过覆盖名单描述适用托盘。 |
-| `/source/shipping` | vehicle 预约明确出发点。allowPartial 是承运人对该预约允许部分发运的声明。 |
+| `/source/scanner` | face 为 front、back 或 separator。job 与 position 记录各自送纸顺序，同一站次序从 1 开始，tag 为空表示页签不可读。 |
+| `/source/clerk` | physical 的含义是实体纸张号，可复用于几个卷。facePolicy: both 要求双面，blank 明确背面为空白。 |
+| `/source/desk` | 借据按调卷号、接收点、物理页键界定。归还缺项不能视为已归还所有纸。 |
 
 查询参数 `offset` 是从零开始的页偏移，`limit` 默认 3，取值 1 至 100。响应中的 `records` 含 `record` 来源记录键、`availableFrom` 首次出现的回放阶段、`kind` 记录类型、`payload` 业务字段。来源记录键与业务身份分别定义。`next` 为下一页偏移，末页为 `null`。回放阶段中的记录按到达顺序可查。
 
-控制员通过 `POST /control?stage=2` 切换到第 2 阶段，服务会保留更早已可查的记录。每次换阶段后按根路径返回的 `stage` 确认切换成功。
+控制员通过 `POST /control?stage=2` 切换到第 2 阶段，服务会保留更早已可查的记录。每次换阶段后按根路径返回的 `stage` 确认切换成功。原件通过 `GET /original/文件名` 领取，阶段内尚不可领时返回 404。原件文件和摘要记录在 `originals/` 与来源索引。

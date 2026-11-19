@@ -1,0 +1,88 @@
+[
+  {
+    "record": "scanner-1",
+    "availableFrom": 1,
+    "kind": "face",
+    "payload": {
+      "station": "甲机",
+      "job": "S7",
+      "position": 1,
+      "face": "separator",
+      "tag": "BN-7"
+    }
+  },
+  {
+    "record": "scanner-2",
+    "availableFrom": 1,
+    "kind": "face",
+    "payload": {
+      "station": "甲机",
+      "job": "S7",
+      "position": 2,
+      "face": "front",
+      "tag": "L1",
+      "artifact": "l1-front.pbm",
+      "imageId": "I18"
+    }
+  },
+  {
+    "record": "scanner-3",
+    "availableFrom": 1,
+    "kind": "face",
+    "payload": {
+      "station": "甲机",
+      "job": "S7",
+      "position": 3,
+      "face": "back",
+      "tag": null,
+      "artifact": "l1-back.pbm",
+      "imageId": "I19"
+    }
+  },
+  {
+    "record": "scanner-4",
+    "availableFrom": 1,
+    "kind": "face",
+    "payload": {
+      "station": "甲机",
+      "job": "S7",
+      "position": 4,
+      "face": "front",
+      "tag": "L2",
+      "artifact": "l2-front.pbm",
+      "imageId": "I20"
+    }
+  },
+  {
+    "record": "scanner-5",
+    "availableFrom": 3,
+    "kind": "face",
+    "payload": {
+      "station": "乙机",
+      "job": "S7",
+      "position": 1,
+      "face": "back",
+      "tag": "L2",
+      "artifact": "l2-back.pbm",
+      "imageId": "I26",
+      "replaces": "I19",
+      "purpose": "补扫分卷错误"
+    }
+  },
+  {
+    "record": "scanner-6",
+    "availableFrom": 4,
+    "kind": "face",
+    "payload": {
+      "station": "甲机",
+      "job": "S8",
+      "position": 2,
+      "face": "front",
+      "tag": "L1",
+      "artifact": "l1-edition.pbm",
+      "imageId": "I31",
+      "edition": "E2",
+      "purpose": "换页"
+    }
+  }
+]
