@@ -1,0 +1,53 @@
+[
+  {
+    "record": "gates-1",
+    "availableFrom": 1,
+    "kind": "arrive",
+    "payload": {
+      "center": "东站",
+      "pallet": "P91",
+      "lot": "L9",
+      "seal": "S4",
+      "time": "08:00"
+    }
+  },
+  {
+    "record": "gates-2",
+    "availableFrom": 1,
+    "kind": "arrive",
+    "payload": {
+      "center": "东站",
+      "pallet": "P92",
+      "lot": "L9",
+      "seal": "S4",
+      "time": "08:01"
+    }
+  },
+  {
+    "record": "gates-3",
+    "availableFrom": 2,
+    "kind": "seal",
+    "payload": {
+      "center": "东站",
+      "pallet": "P91",
+      "previous": "S4",
+      "current": "S5",
+      "time": "08:25",
+      "exposed": false,
+      "intactChange": true
+    }
+  },
+  {
+    "record": "gates-4",
+    "availableFrom": 4,
+    "kind": "seal",
+    "payload": {
+      "center": "东站",
+      "pallet": "P92",
+      "previous": "S4",
+      "current": "S6",
+      "time": "08:19",
+      "exposed": true
+    }
+  }
+]
