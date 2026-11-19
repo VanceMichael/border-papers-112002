@@ -54,6 +54,109 @@
     }
   },
   {
+    "record": "scanner-7",
+    "availableFrom": 1,
+    "kind": "feed",
+    "payload": {
+      "station": "甲机",
+      "job": "S7",
+      "mode": "duplex",
+      "discharged": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "jamAfter": 4
+    }
+  },
+  {
+    "record": "scanner-8",
+    "availableFrom": 2,
+    "kind": "feed",
+    "payload": {
+      "station": "乙机",
+      "job": "S7",
+      "mode": "reverse",
+      "frontJob": "F7",
+      "discharged": [
+        1
+      ],
+      "jamAfter": 1
+    }
+  },
+  {
+    "record": "scanner-9",
+    "availableFrom": 2,
+    "kind": "feed",
+    "payload": {
+      "station": "乙机",
+      "job": "F7",
+      "mode": "front",
+      "discharged": [
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  {
+    "record": "scanner-10",
+    "availableFrom": 2,
+    "kind": "face",
+    "payload": {
+      "station": "乙机",
+      "job": "F7",
+      "position": 1,
+      "face": "front",
+      "tag": "L1",
+      "artifact": "l1-front.pbm",
+      "imageId": "I24"
+    }
+  },
+  {
+    "record": "scanner-11",
+    "availableFrom": 2,
+    "kind": "face",
+    "payload": {
+      "station": "乙机",
+      "job": "F7",
+      "position": 3,
+      "face": "front",
+      "tag": "L2",
+      "artifact": "l2-front.pbm",
+      "imageId": "I25"
+    }
+  },
+  {
+    "record": "scanner-14",
+    "availableFrom": 2,
+    "kind": "face",
+    "payload": {
+      "station": "南机",
+      "job": "N2",
+      "position": 1,
+      "face": "front",
+      "tag": "L3",
+      "physical": "P63",
+      "artifact": "l3-front.pbm",
+      "imageId": "I28"
+    }
+  },
+  {
+    "record": "scanner-15",
+    "availableFrom": 2,
+    "kind": "feed",
+    "payload": {
+      "station": "南机",
+      "job": "N2",
+      "mode": "single",
+      "discharged": [
+        1
+      ]
+    }
+  },
+  {
     "record": "scanner-5",
     "availableFrom": 3,
     "kind": "face",
@@ -70,6 +173,18 @@
     }
   },
   {
+    "record": "scanner-12",
+    "availableFrom": 3,
+    "kind": "correction",
+    "payload": {
+      "imageId": "I19",
+      "physical": "P62",
+      "face": "back",
+      "refersTo": "I26",
+      "reason": "纸档人员复核页签"
+    }
+  },
+  {
     "record": "scanner-6",
     "availableFrom": 4,
     "kind": "face",
@@ -83,6 +198,47 @@
       "imageId": "I31",
       "edition": "E2",
       "purpose": "换页"
+    }
+  },
+  {
+    "record": "scanner-13",
+    "availableFrom": 4,
+    "kind": "feed",
+    "payload": {
+      "station": "甲机",
+      "job": "S8",
+      "mode": "duplex",
+      "discharged": [
+        2
+      ]
+    }
+  },
+  {
+    "record": "scanner-16",
+    "availableFrom": 4,
+    "kind": "face",
+    "payload": {
+      "station": "南机",
+      "job": "N4",
+      "position": 1,
+      "face": "back",
+      "tag": "L3",
+      "physical": "P63",
+      "artifact": "l3-back.pbm",
+      "imageId": "I29"
+    }
+  },
+  {
+    "record": "scanner-17",
+    "availableFrom": 4,
+    "kind": "feed",
+    "payload": {
+      "station": "南机",
+      "job": "N4",
+      "mode": "single",
+      "discharged": [
+        1
+      ]
     }
   }
 ]

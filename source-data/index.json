@@ -2,25 +2,32 @@
   "sources": [
     "scanner",
     "clerk",
-    "desk"
+    "desk",
+    "rescans"
   ],
-  "stages": 4,
+  "stages": 5,
   "originals": [
     "l1-front.pbm",
     "l1-back.pbm",
     "l2-front.pbm",
     "l2-back.pbm",
-    "l1-edition.pbm"
+    "l1-edition.pbm",
+    "l3-front.pbm",
+    "l3-back.pbm"
   ],
   "originalStages": {
     "l2-back.pbm": 3,
-    "l1-edition.pbm": 4
+    "l1-edition.pbm": 4,
+    "l3-front.pbm": 2,
+    "l3-back.pbm": 4
   },
   "digests": {
     "l1-front.pbm": "9de5b3057724c1cd308f27e0295a08e5231666e616c7a0b3a873324928ab3632",
     "l1-back.pbm": "709393b22d2d24ea5214f11fefec2fcc9d4bee47571eb42bd74129910506b2da",
     "l2-front.pbm": "39179e0aaae1b7715930c91f43edcbb6234c75335a7de824ed07d67cd9d83a23",
     "l2-back.pbm": "f4e8bea021798c1647971734baa2470d934b48c4b7d5f36251b169f312a3ed5d",
-    "l1-edition.pbm": "8283667e256616131f4a064c57cb280ae5c45fdb6015f7f2d5e42f81d663c8a6"
+    "l1-edition.pbm": "8283667e256616131f4a064c57cb280ae5c45fdb6015f7f2d5e42f81d663c8a6",
+    "l3-front.pbm": "060f3c53f7fd01b4b750cabd3db0728ef2119e1901aa54b5ef8f5b8873fc5f7a",
+    "l3-back.pbm": "1286b4b541aabf7746986febeb8bef8d461e0fe348c700b346cb90181103bf5a"
   }
 }

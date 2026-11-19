@@ -1,0 +1,77 @@
+[
+  {
+    "record": "rescans-1",
+    "availableFrom": 1,
+    "kind": "visit",
+    "payload": {
+      "visit": "V91",
+      "location": "北柜",
+      "window": [
+        "11:15",
+        "11:30"
+      ],
+      "faceLimit": 2
+    }
+  },
+  {
+    "record": "rescans-2",
+    "availableFrom": 2,
+    "kind": "visit",
+    "payload": {
+      "visit": "V92",
+      "location": "南柜",
+      "window": [
+        "11:28",
+        "11:40"
+      ],
+      "faceLimit": 1
+    }
+  },
+  {
+    "record": "rescans-3",
+    "availableFrom": 3,
+    "kind": "visit",
+    "payload": {
+      "visit": "V93",
+      "location": "北柜",
+      "window": [
+        "11:55",
+        "12:00"
+      ],
+      "faceLimit": 1
+    }
+  },
+  {
+    "record": "rescans-4",
+    "availableFrom": 3,
+    "kind": "accepted",
+    "payload": {
+      "visit": "V92",
+      "physical": "P63",
+      "faces": [
+        "back"
+      ],
+      "time": "11:31"
+    }
+  },
+  {
+    "record": "rescans-5",
+    "availableFrom": 4,
+    "kind": "cancel_requested",
+    "payload": {
+      "visit": "V92",
+      "physical": "P63",
+      "time": "11:34"
+    }
+  },
+  {
+    "record": "rescans-6",
+    "availableFrom": 5,
+    "kind": "released",
+    "payload": {
+      "visit": "V92",
+      "physical": "P63",
+      "time": "11:38"
+    }
+  }
+]

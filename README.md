@@ -1,25 +1,24 @@
-# 转关纸档的双面扫描与分卷调取的演练来源
+# 转关纸档的扫描与调阅来源
 
-这里提供独立来源的本地合成记录，与实际单位、个人和线上业务无关。
+本地合成记录模拟口岸纸档的扫描站、卷登记端、调阅台及补扫班组。
 
 ## 本地运行
 
-使用 Node.js 22.23.4。只使用 Node.js 自带的运行库。
-
-执行 `npm test` 检查合成来源的接口。执行 `npm start` 启动来源，默认监听 `127.0.0.1:4100`，可通过环境变量 `PORT` 调整端口。访问根路径可看到来源名和当前回放阶段。
+使用 Node.js 22.23.4。项目只使用 Node.js 自带的运行库。运行 `npm test` 检查来源接口，运行 `npm start` 启动服务。默认监听 `127.0.0.1:4100`，可通过 `PORT` 调整。根路径列出来源名及当前回放阶段。
 
 ## 接口资料
 
 | GET 路由 | 来源约定 |
 | --- | --- |
-| `/source/scanner` | face 为 front、back 或 separator。job 与 position 记录各自送纸顺序，同一站次序从 1 开始，tag 为空表示页签不可读。 |
-| `/source/clerk` | physical 的含义是实体纸张号，可复用于几个卷。facePolicy: both 要求双面，blank 明确背面为空白。 |
-| `/source/desk` | 借据按调卷号、接收点、物理页键界定。归还缺项不能视为已归还所有纸。 |
+| `/source/scanner` | 作业以站点与批次共同标识。`feed.mode` 的 `duplex` 表示连续双面，`reverse` 表示按翻好的整摞补扫背面，`front` 或 `single` 表示单面进纸。`frontJob` 指同站正面批次。`discharged` 列出确认稳定出纸的位置，`jamAfter` 是现场报告的卡纸边界。 |
+| `/source/clerk` | `physical` 表示实体纸件。共用纸可以出现在不同卷版。`facePolicy` 为 `both` 时登记要求留双面，为 `blank` 时登记端明确背面为空白。 |
+| `/source/desk` | `request` 是调阅申请，`reserved` 是已确认留用，`received` 是实际收件。`returned` 可以只有部分面。`return_dispute` 是未了退件争议。`release` 是原接收点确认解除实体纸占用。`custody` 是实体归柜记录。 |
+| `/source/rescans` | `visit` 给出班组可到的柜点、作业时段及本趟扫描面数。`accepted` 为班组已受理的纸件及面。`cancel_requested` 是取消请求，`released` 是班组实际确认释放。 |
 
-查询参数 `offset` 是从零开始的页偏移，`limit` 默认 3，取值 1 至 100。响应中的 `records` 含 `record` 来源记录键、`availableFrom` 首次出现的回放阶段、`kind` 记录类型、`payload` 业务字段。来源记录键与业务身份分别定义。`next` 为下一页偏移，末页为 `null`。回放阶段中的记录按到达顺序可查。
+扫描的 `face` 有 `front`、`back` 和 `separator`，`tag` 为空指页签到达时不可读。`artifact` 是 PBM 原图文件名，`imageId` 是扫描事件中的影像编号。`correction` 记录扫描方对某幅既有影像的实体归属复核。`refersTo` 是复核引用的影像编号。卷登记中的 `edition` 与扫描批次编号各自独立。页签由扫描人员记录。
 
-控制员通过 `POST /control?stage=2` 切换到第 2 阶段，服务会保留更早已可查的记录。每次换阶段后按根路径返回的 `stage` 确认切换成功。原件通过 `GET /original/文件名` 领取，阶段内尚不可领时返回 404。原件文件和摘要记录在 `originals/` 与来源索引。
+调阅端的 `batch` 是电子页接收单，`physical` 列出指定卷版中的实体页，`mode` 为 `partial` 或 `together`，`deadline` 是接收截止时刻。每条记录内的时刻都采用同一工作日的柜点本地时间，时段含开始且截至结束时刻前。
 
-feed 从已读取的送纸报告提供本次是否连续正反扫描、是否翻摞反向及已稳定出纸序号 discharged。sep 或 separator 是隔页现场识别。图像为本地 PBM，tag 已由来源记录，无须 OCR。
+查询参数 `offset` 从零开始，`limit` 默认 3，允许 1 至 100。响应的 `records` 中，`record` 是来源记录键，`availableFrom` 是首次可查阶段，`kind` 是记录种类，`payload` 是业务内容。`next` 给出下一页偏移，末页返回 `null`。
 
-扫描站提供逐页送纸回执，明确连续正反、翻摞反扫方向和已稳定出纸的位置。PBM 原件是黑白图像，页签由扫描人员直接记录。
+控制员通过 `POST /control?stage=2` 切换到第 2 阶段。已出现的记录继续可查。用 `GET /original/文件名` 领取原图，阶段内尚不可领时返回 404。来源索引记录原件名称、出现阶段及 SHA-256。

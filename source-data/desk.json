@@ -15,6 +15,46 @@
     }
   },
   {
+    "record": "desk-5",
+    "availableFrom": 1,
+    "kind": "custody",
+    "payload": {
+      "physical": "P61",
+      "location": "北柜",
+      "time": "10:40"
+    }
+  },
+  {
+    "record": "desk-6",
+    "availableFrom": 1,
+    "kind": "custody",
+    "payload": {
+      "physical": "P62",
+      "location": "北柜",
+      "time": "10:40"
+    }
+  },
+  {
+    "record": "desk-7",
+    "availableFrom": 1,
+    "kind": "custody",
+    "payload": {
+      "physical": "P63",
+      "location": "南柜",
+      "time": "10:40"
+    }
+  },
+  {
+    "record": "desk-8",
+    "availableFrom": 1,
+    "kind": "custody",
+    "payload": {
+      "physical": "P68",
+      "location": "北柜",
+      "time": "10:40"
+    }
+  },
+  {
     "record": "desk-2",
     "availableFrom": 2,
     "kind": "received",
@@ -45,6 +85,69 @@
     }
   },
   {
+    "record": "desk-9",
+    "availableFrom": 2,
+    "kind": "batch",
+    "payload": {
+      "batch": "B81",
+      "desk": "甲席",
+      "volume": "BN-8",
+      "edition": "E1",
+      "physical": [
+        "P61",
+        "P63"
+      ],
+      "mode": "together",
+      "deadline": "11:42"
+    }
+  },
+  {
+    "record": "desk-10",
+    "availableFrom": 2,
+    "kind": "batch",
+    "payload": {
+      "batch": "B82",
+      "desk": "乙席",
+      "volume": "BN-7",
+      "edition": "E1",
+      "physical": [
+        "P61",
+        "P62"
+      ],
+      "mode": "partial",
+      "deadline": "12:00"
+    }
+  },
+  {
+    "record": "desk-11",
+    "availableFrom": 2,
+    "kind": "batch",
+    "payload": {
+      "batch": "B83",
+      "desk": "丙席",
+      "volume": "BN-8",
+      "edition": "E1",
+      "physical": [
+        "P61"
+      ],
+      "mode": "partial",
+      "deadline": "12:00"
+    }
+  },
+  {
+    "record": "desk-12",
+    "availableFrom": 3,
+    "kind": "return_dispute",
+    "payload": {
+      "loan": "R1",
+      "desk": "甲席",
+      "physical": "P61",
+      "time": "11:37",
+      "face": "back",
+      "imageId": "I19"
+    }
+  },
+  {
     "record": "desk-4",
     "availableFrom": 4,
     "kind": "returned",
@@ -56,6 +159,37 @@
       "faces": [
         "I18"
       ]
+    }
+  },
+  {
+    "record": "desk-13",
+    "availableFrom": 4,
+    "kind": "reserved",
+    "payload": {
+      "loan": "R3",
+      "desk": "乙席",
+      "volume": "BN-7",
+      "edition": "E2",
+      "physical": [
+        "P68"
+      ],
+      "window": [
+        "11:55",
+        "12:05"
+      ],
+      "confirmedAt": "11:36"
+    }
+  },
+  {
+    "record": "desk-14",
+    "availableFrom": 5,
+    "kind": "release",
+    "payload": {
+      "loan": "R1",
+      "desk": "甲席",
+      "physical": "P61",
+      "time": "11:54",
+      "location": "北柜"
     }
   }
 ]
